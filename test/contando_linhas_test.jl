@@ -41,4 +41,5 @@ import ContandoLinhas
 Test.with_handler(custom_handler) do
   @test tratarLinha("// Comentario de uma linha") == 0
   @test tratarLinha("public class X {}\n") == 1
+  @test tratarLinha("/* Dojo Julia 06/10/2015 */") == 0
 end
