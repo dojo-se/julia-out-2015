@@ -1,5 +1,8 @@
 module ContandoLinhas end
 
-export soma
+export tratarLinha
 
-soma(a,b) = a + b
+non_comment_regex = r"^[^\/]+"
+reg_comentario = r"(\/\*[\w\'\s\r\n\*]*\*\/)|(\/\/.*)"
+
+tratarLinha(str::String) = ismatch(reg_comentario, str) ? 0 : 1
